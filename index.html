@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#mainDiv{
+			margin-top: 10%;
+			margin-left:32%;
+			border:dashed; black;
+			width:500px;
+			height:500px;
+			display:grid;
+			grid-template-columns: 250px 250px;
+			grid-template-rows:250px 250px;
+			
+
+		}
+		#mainDiv:hover >#box1{/*-----I never knew this worked. the > liking to the div*/
+			background:red;
+			transform: rotate(90deg);
+			transform-origin: top left;
+			transition:1s;
+					}
+		
+		#mainDiv:hover >#box2{/*-----I never knew this worked. the > liking to the div*/
+			background:blue;
+			transform: rotate(-90deg);
+			transform-origin: top right;
+			transition:1s;
+			animation: twirltwo 1s ease-in-out 0s;
+		}
+		@keyframes twirltwo{
+			0%{background:blue;
+			transform: rotate(0deg);
+			transform-origin: top right;
+
+			}
+			100%{
+				background:blue;
+			transform: rotate(-90deg);
+			transform-origin: top right;/*-----soooo using transform element lets you be more specific about the corner you would like to rotate on*/
+			}
+			
+
+		}
+
+		#mainDiv:hover >#box3{/*-----I never knew this worked. the > liking to the div*/
+			background:green;
+			transform: rotate(-90deg);
+			transform-origin: bottom left;
+			transition:1s;
+			animation: twirlthree 1s ease-in-out 0s;
+		}
+		@keyframes twirlthree{
+			0%{background:green;
+			transform: rotate(0deg);
+			transform-origin: bottom left;
+
+			}
+			100%{
+				background:green;
+			transform: rotate(-90deg);
+			transform-origin: bottom left;
+			}
+			
+
+		}
+
+
+		#mainDiv:hover >#box4{/*-----I never knew this worked. the > liking to the div*/
+			background:yellow;
+			transform: rotate(90deg);
+			transform-origin: bottom right;
+			transition:1s;
+			animation: twirlfour 1s ease-in-out 0s;
+		}
+		@keyframes twirlfour{
+			0%{background:yellow;
+			transform: rotate(0deg);
+			transform-origin: bottom right;
+
+			}
+			100%{
+				background:yellow;
+			transform: rotate(90deg);
+			transform-origin: bottom right;
+			}
+			
+
+		}
+		.all{
+			
+		}
+		#box1{
+			background: red;
+			transition:1s;/*----soooo in order to get a smooth hover off animation you have to give a transition time to the original object too*/
+		}
+		#box2{
+			background: blue;
+			transition:1s;
+		}
+		#box3{
+			background: green;
+			transition:1s;
+		}
+		#box4{
+			background: yellow;
+			transition:1s;
+		}
+		h1{
+			position:absolute;
+			z-index:-1; 
+			margin-left:175px;
+			margin-top:215px;
+			/*border:solid;*/
+			font-family: "helvetica";
+			font-size: 40pt;
+			/*color:green;*/
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+	<div id="mainDiv">
+		<div class="all" id="box1"></div>
+		<div class="all" id="box2"></div>
+		<div class="all" id="box3"></div>
+		<div class="all" id="box4"></div>
+		<h1>Hello!</h1>
+	</div>
+
+</body>
+</html>
